@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista a Santa - Polo Express</title>
+    <link rel="stylesheet" href="Secundarias.css">
+</head>
+<body class="page-interior"> <!-- Solo en páginas interiores -->
+    <header>
+        
+        <header class="header">
+            <div class="menu-container">
+                <div class="logo">
+                    <a href="index.html" class="Polo-Express">Polo Express</a>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li>
+                            <img src="Iconos/Luces.png" alt="Luces">
+                            <a href="luces.html" class="menu-luces">Luces</a>
+                        </li>
+                        <li>
+                            <img src="Iconos/Exterior.png" alt="Exterior">
+                            <a href="exterior.html" class="menu-exterior">Exterior</a>
+                        </li>
+                        <li>
+                            <img src="Iconos/Interior.png" alt="Interior">
+                            <a href="interior.html" class="menu-interior">Interior</a>
+                        </li>
+                        <li>
+                            <img src="Iconos/Árboles.png" alt="Árboles">
+                            <a href="arboles.html" class="menu-arboles">Árboles</a>
+                        </li>
+                        <li>
+                            <img src="Iconos/Guardaropa.png" alt="Guardaropa">
+                            <a href="guardaropa.html" class="menu-guardaropa">Guardaropa</a>
+                        </li>
+                        <li>
+                            <img src="Iconos/Recetas.png" alt="Recetas">
+                            <a href="recetas.html" class="menu-recetas">Recetas</a>
+                        </li>
+                    </ul>
+                    <div class="top-menu">
+                    </ul>
+                        <li>
+                            <img src="Iconos/Whislist.png" alt="Lista de deseos">
+                            <a href="whishlist.html" class="icon">Lista de deseos</a>
+                        </li>
+                        <li>
+                            <img src="Iconos/Sesión.png" alt="Iniciar sesión o registrarse">
+                            <a href="sesion.html" class="icon">Iniciar sesión o registrarse</a>
+                        </li>
+                        <li>
+                            <img src="Iconos/Contactanos.png" alt="Interior">
+                            <a href="contactanos.html" class="icon">Contactanos</a>
+                        </li> 
+                     </ul>                       
+                     </div>
+                </nav>
+            </div>
+
+            <div class="header-content container">
+                <div class="header-txt">
+                    <h1>Haz tu lista a santa</h1>
+                    <p>
+                        Guarda tus articulos favoritos para despues comprarlos:
+                    </p>
+                    <a href="#" class="btn-1">Más información</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="wishlist">
+            <h2>Productos en tu lista de deseos</h2>
+    
+            <div class="product">
+                <input type="checkbox" id="product1" data-price="50">
+                <label for="product1">Producto 1 - $50</label>
+            </div>
+            <div class="product">
+                <input type="checkbox" id="product2" data-price="30">
+                <label for="product2">Producto 2 - $30</label>
+            </div>
+            <div class="product">
+                <input type="checkbox" id="product3" data-price="20">
+                <label for="product3">Producto 3 - $20</label>
+            </div>
+    
+            <div class="total">
+                <p>Total: $<span id="total">0</span></p>
+            </div>
+        </section>
+        <script src="Calculadora.js"></script>
+    </header>
+    </body>
+</html>

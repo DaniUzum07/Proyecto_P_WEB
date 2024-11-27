@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Fondo y fuente */
+body {
+    background-image: url("images/Chosita.png"); /* Verifica la ruta */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+
+/* Header principal */
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura el espacio entre elementos */
+    padding: 10px 20px; /* Reduce el grosor del contenedor */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparencia */
+    height: 60px; /* Altura fija para garantizar un grosor delgado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+}
+
+/* Logo */
+.logo {
+    text-align: left;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #007BFF;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centra el navbar */
+    gap: 20px;
+    width: 100%; /* Ocupa todo el espacio disponible */
+    position: relative; /* No interfiere con otros elementos */
+}
+
+.navbar li {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar a {
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.navbar img {
+    width: 35px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar li:hover img {
+    transform: scale(1.2);
+}
+
+.navbar li:hover a {
+    opacity: 1;
+    max-width: 200px;
+    padding-left: 5px;
+}
+
+.navbar a:hover {
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.menu-luces:hover { background-color: #FFD700; }
+.menu-exterior:hover { background-color: #4CAF50; }
+.menu-interior:hover { background-color: #FF5722; }
+.menu-arboles:hover { background-color: #8E44AD; }
+.menu-guardaropa:hover { background-color: #3498DB; }
+.menu-recetas:hover { background-color: #E74C3C; }
+
+/* Top-menu */
+.top-menu {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.top-menu li {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.top-menu a {
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.top-menu img {
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.top-menu li:hover img {
+    transform: scale(1.2);
+}
+
+.top-menu li:hover a {
+    opacity: 1;
+    max-width: 100px;
+    padding-left: 5px;
+}
+
+.top-menu a:hover {
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.icon:hover { background-color: #FFD700; }
+.icon:hover { background-color: #4CAF50; }
+.icon:hover { background-color: #FF5722; }
+
+/* Botones */
+.btn-2 {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #f4433600;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-2:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .top-menu {
+        gap: 5px;
+    }
+}
+
+.productos{
+
+    border-radius: 10px;
+    flex-basis: calc(10% - 10px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align:center ;
+
+    display: flex;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* columnas */
+    gap: 20px; /* Espaciado entre las cajitas */
+    padding: 20px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Estilo para las cajitas */
+.card {
+    background: rgba(255, 255, 255, 0.2); /* Efecto cristalino */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Sombra difusa */
+    backdrop-filter: blur(10px); /* Efecto desenfoque */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Bordes transparentes */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover */
+.card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+/* Imagen dentro de la cajita */
+.card img {
+    width: 100%; /* Ajusta el ancho al tamaño de la cajita */
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Detalles del artículo */
+.card-details {
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+.card-details h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.card-details p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+header {
+    margin-top: 60px; /* Compensa el tamaño del header */
+    padding: 0px;
+}

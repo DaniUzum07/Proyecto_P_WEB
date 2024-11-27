@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Dancing Script', cursive;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('images/Chimenea.png');
+    background-size: fixed;
+    background-position: center;
+}
+
+.glass-container {
+    width: 500px;
+    height: auto;
+    max-height: 600px;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.glass-container::before {
+    content: '';
+    position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+
+h1 {
+   color: #fff;
+   margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 0px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background: #fff;
+    color: black;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid #fff;
+}
+
+button:focus {
+    outline: none;
+}
+
+.mensaje {
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+/* Adaptabilidad para móviles */
+@media (max-width: 768px) {
+    .glass-container {
+        width: 80%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

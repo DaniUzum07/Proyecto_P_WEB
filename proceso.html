@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles_3.css">
+    <script src="tuscript.js"></script>
+</head>
+<body>
+    <div class="glass-container">
+        <div class="login-box">
+            <h1>Registro</h1>
+            <form action="/proceso" method="POST">
+                <label for="usuario">Usuario:</label><br>
+                <input type="text" id="usuario" name="usuario" required><br><br>
+                
+                <label for="correo_electronico">Correo Electrónico:</label><br>
+                <input type="email" id="correo_electronico" name="correo_electronico" required><br><br>
+                
+                <label for="contrasena">Contraseña:</label><br>
+                <input type="password" id="contrasena" name="contrasena" required><br><br>
+                
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

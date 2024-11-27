@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles_5.css">
+    <script src="tuscript.js"></script>
+</head>
+<body>
+    <div class="glass-container">
+        <div class="login-box">
+            <h1>Inicio de sesión</h1>
+            <form action="/insesion" method="GET">
+                <label for="usuario">Usuario:</label><br>
+                <input type="text" id="usuario" name="usuario" required placeholder="Usuario">
+                <label for="contrasena">Contraseña:</label><br>
+                <input type="password" id="contrasena" name="contrasena" required placeholder="Contraseña">
+                <button type="submit">Iniciar Sesión</button>
+                <div class="options">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Recordarme</label>
+                    <!-- Enlace de recuperación de contraseña -->
+                    <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
