@@ -1,0 +1,8 @@
+<a href="#" class="agregar-al-carrito" 
+   data-id="112" 
+   data-name="Luces para interiores" 
+   data-price="350" 
+   data-image="imagenes de todo/luces/luces29.jpg" 
+   data-description="Serie de luces con guirnalda incluida de 10.">
+   Agregar a la lista de deseos
+</a>
