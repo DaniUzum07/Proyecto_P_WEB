@@ -262,3 +262,10 @@ header {
     margin-top: 60px; /* Compensa el tamaño del header */
     padding: 0px;
 }
+
+footer {
+    background: rgba(0, 0, 0, 0.655); /* Efecto cristalino */
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
