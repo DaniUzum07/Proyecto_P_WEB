@@ -1,30 +1,37 @@
 // Al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
-    const wishlistContainer = document.getElementById('wishlist-container'); // Contenedor para los productos
-    const totalElement = document.getElementById('total'); // Elemento para mostrar el total
+    const wishlistContainer = document.getElementById('wishlist-container');
+    const totalElement = document.getElementById('total');
+    const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 
-    // Obtener la lista de deseos del localStorage
-    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-
-    // Si no hay productos, mostrar un mensaje vacío
-    if (wishlist.length === 0) {
-        wishlistContainer.innerHTML = `<p>No tienes productos en tu lista de deseos.</p>`;
+    if (!wishlistContainer || !totalElement) {
+        console.error('Faltan elementos esenciales en el DOM.');
         return;
     }
 
-    // Renderizar productos dinámicamente
+    // Obtener la lista de deseos desde localStorage
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Si la lista está vacía, mostrar mensaje y terminar
+    if (wishlist.length === 0) {
+        wishlistContainer.innerHTML = `<p>No tienes productos en tu lista de deseos.</p>`;
+        totalElement.textContent = '0.00';
+        return;
+    }
+
+    // Renderizar los productos de la lista
     wishlist.forEach((producto) => {
         const productDiv = document.createElement('div');
         productDiv.classList.add('product');
         productDiv.innerHTML = `
             <div class="card">
                 <div class="card-details">
-                    <input type="checkbox" class="product-checkbox" data-price="${producto.price}" id="product-${producto.id}">
+                    <input type="checkbox" class="product-checkbox" data-price="${producto.price || 0}" id="product-${producto.id}">
                     <label for="product-${producto.id}">
-                        <img src="${producto.image || 'default-image.jpg'}" alt="${producto.name}">
-                        <h3>${producto.name}</h3>
-                        <p>${producto.description || ''}</p>
-                        <p class="precio">$${producto.price}</p>
+                        <img src="${producto.image || 'default-image.jpg'}" alt="${producto.name || 'Producto'}">
+                        <h3>${producto.name || 'Sin nombre'}</h3>
+                        <p>${producto.description || 'Sin descripción disponible'}</p>
+                        <p class="precio">$${producto.price || '0.00'}</p>
                     </label>
                 </div>
             </div>
@@ -32,34 +39,32 @@ document.addEventListener('DOMContentLoaded', () => {
         wishlistContainer.appendChild(productDiv);
     });
 
-    // Actualizar el total cuando cambien los checkboxes
-    const checkboxes = document.querySelectorAll('.product-checkbox');
-    checkboxes.forEach((checkbox) => {
+    // Función para actualizar el total
+    const updateTotal = () => {
+        let total = 0;
+        document.querySelectorAll('.product-checkbox').forEach((checkbox) => {
+            if (checkbox.checked) {
+                total += parseFloat(checkbox.dataset.price) || 0;
+            }
+        });
+        totalElement.textContent = total.toFixed(2); // Mostrar total con dos decimales
+    };
+
+    // Añadir eventos a los checkboxes
+    document.querySelectorAll('.product-checkbox').forEach((checkbox) => {
         checkbox.addEventListener('change', updateTotal);
     });
 
-    // Función para calcular y actualizar el total
-    function updateTotal() {
-        let total = 0;
-        checkboxes.forEach((checkbox) => {
-            if (checkbox.checked) {
-                total += parseFloat(checkbox.dataset.price);
-            }
-        });
-        totalElement.textContent = total.toFixed(2);
-    }
-
-    // Inicializar el total
+    // Inicializar el total al cargar la página
     updateTotal();
 
-    // Opción para vaciar la lista de deseos
-    const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+    // Vaciar lista de deseos
     if (vaciarCarritoBtn) {
         vaciarCarritoBtn.addEventListener('click', () => {
             if (confirm('¿Estás seguro de que deseas vaciar tu lista de deseos?')) {
-                localStorage.removeItem('wishlist'); // Limpiar localStorage
+                localStorage.removeItem('wishlist'); // Eliminar lista de localStorage
                 wishlistContainer.innerHTML = `<p>No tienes productos en tu lista de deseos.</p>`;
-                totalElement.textContent = '0';
+                totalElement.textContent = '0.00';
             }
         });
     }
